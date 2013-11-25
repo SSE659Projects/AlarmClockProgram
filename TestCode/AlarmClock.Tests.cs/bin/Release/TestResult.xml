@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="E:\Mercer Masters\Fall 2013\SSE 659\SSE659_Project3\TestCode\AlarmClock.Tests.cs\bin\Release\AlarmClock.Tests.cs.dll" total="0" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2013-11-22" time="07:26:54">
+  <environment nunit-version="2.5.10.11092" clr-version="4.0.30319.1008" os-version="Microsoft Windows NT 6.0.6002 Service Pack 2" platform="Win32NT" cwd="C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE" machine-name="CD-PC" user="CD" user-domain="CD-PC" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="E:\Mercer Masters\Fall 2013\SSE 659\SSE659_Project3\TestCode\AlarmClock.Tests.cs\bin\Release\AlarmClock.Tests.cs.dll" executed="True" result="Inconclusive" success="False" time="0.014" asserts="0" />
+</test-results>

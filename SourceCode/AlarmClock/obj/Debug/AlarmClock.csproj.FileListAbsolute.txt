@@ -1,0 +1,15 @@
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\AlarmClock\AlarmClock\bin\Debug\AlarmClock.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\AlarmClock\AlarmClock\bin\Debug\AlarmClock.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\AlarmClock\AlarmClock\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\AlarmClock\AlarmClock\obj\Debug\AlarmClock.frmMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\AlarmClock\AlarmClock\obj\Debug\AlarmClock.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\AlarmClock\AlarmClock\obj\Debug\AlarmClock.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\AlarmClock\AlarmClock\obj\Debug\AlarmClock.exe.licenses
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\AlarmClock\AlarmClock\obj\Debug\AlarmClock.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\AlarmClock\AlarmClock\obj\Debug\AlarmClock.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\AlarmClock\AlarmClock\obj\Debug\AlarmClock.frmSnooze.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\AlarmClock\AlarmClock\bin\Debug\AlarmClock.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\AlarmClock\AlarmClock\bin\Debug\AlarmClock.exe.manifest
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\AlarmClock\AlarmClock\bin\Debug\AlarmClock.application
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\AlarmClock\AlarmClock\obj\Debug\AlarmClock.exe.manifest
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\AlarmClock\AlarmClock\obj\Debug\AlarmClock.application

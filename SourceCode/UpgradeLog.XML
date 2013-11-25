@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="AlarmClock">
+</Property><Property Name="Solution File" Value="C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\AlarmClock.sln">
+</Property><Property Name="User Options File" Value="C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\AlarmClock.suo">
+</Property><Property Name="Date" Value="Wednesday, November 06, 2013">
+</Property><Property Name="Time" Value="21:21 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="AlarmClock.sln" Description="File successfully backed up as C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\Backup\AlarmClock.sln">
+</Event><Event ErrorLevel="0" Project="" Source="AlarmClock.suo" Description="File successfully backed up as C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\Backup\AlarmClock.suo">
+</Event><Event ErrorLevel="0" Project="AlarmClock" Source="AlarmClock\AlarmClock.csproj" Description="Project file successfully backed up as C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\Backup\AlarmClock\AlarmClock.csproj">
+</Event><Event ErrorLevel="0" Project="AlarmClock" Source="AlarmClock\AlarmClock.csproj.user" Description="Project user file successfully backed up as C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\Backup\AlarmClock\AlarmClock.csproj.user">
+</Event><Event ErrorLevel="0" Project="AlarmClock" Source="AlarmClock\Form1.cs" Description="File successfully backed up as C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\Backup\AlarmClock\Form1.cs">
+</Event><Event ErrorLevel="0" Project="AlarmClock" Source="AlarmClock\Form1.Designer.cs" Description="File successfully backed up as C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\Backup\AlarmClock\Form1.Designer.cs">
+</Event><Event ErrorLevel="0" Project="AlarmClock" Source="AlarmClock\frmSnooze.cs" Description="File successfully backed up as C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\Backup\AlarmClock\frmSnooze.cs">
+</Event><Event ErrorLevel="0" Project="AlarmClock" Source="AlarmClock\frmSnooze.Designer.cs" Description="File successfully backed up as C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\Backup\AlarmClock\frmSnooze.Designer.cs">
+</Event><Event ErrorLevel="0" Project="AlarmClock" Source="AlarmClock\Program.cs" Description="File successfully backed up as C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\Backup\AlarmClock\Program.cs">
+</Event><Event ErrorLevel="0" Project="AlarmClock" Source="AlarmClock\Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\Backup\AlarmClock\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="AlarmClock" Source="AlarmClock\Properties\Resources.Designer.cs" Description="File successfully backed up as C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\Backup\AlarmClock\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="AlarmClock" Source="AlarmClock\Properties\Settings.Designer.cs" Description="File successfully backed up as C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\Backup\AlarmClock\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="AlarmClock" Source="AlarmClock\Sound.cs" Description="File successfully backed up as C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\Backup\AlarmClock\Sound.cs">
+</Event><Event ErrorLevel="0" Project="AlarmClock" Source="AlarmClock\AlarmClock_TemporaryKey.pfx" Description="File successfully backed up as C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\Backup\AlarmClock\AlarmClock_TemporaryKey.pfx">
+</Event><Event ErrorLevel="0" Project="AlarmClock" Source="AlarmClock\app.config" Description="File successfully backed up as C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\Backup\AlarmClock\app.config">
+</Event><Event ErrorLevel="0" Project="AlarmClock" Source="AlarmClock\Properties\Settings.settings" Description="File successfully backed up as C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\Backup\AlarmClock\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="AlarmClock" Source="AlarmClock\Resources\Alarm.ico" Description="File successfully backed up as C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\Backup\AlarmClock\Resources\Alarm.ico">
+</Event><Event ErrorLevel="0" Project="AlarmClock" Source="AlarmClock\Form1.resx" Description="File successfully backed up as C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\Backup\AlarmClock\Form1.resx">
+</Event><Event ErrorLevel="0" Project="AlarmClock" Source="AlarmClock\frmSnooze.resx" Description="File successfully backed up as C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\Backup\AlarmClock\frmSnooze.resx">
+</Event><Event ErrorLevel="0" Project="AlarmClock" Source="AlarmClock\Properties\licenses.licx" Description="File successfully backed up as C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\Backup\AlarmClock\Properties\licenses.licx">
+</Event><Event ErrorLevel="0" Project="AlarmClock" Source="AlarmClock\Properties\Resources.resx" Description="File successfully backed up as C:\Users\Laptop\Desktop\SSE659 Possible Games\Simple_C__21356811282008\AlarmClock\Backup\AlarmClock\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="AlarmClock" Source="AlarmClock\AlarmClock.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="AlarmClock" Source="AlarmClock\AlarmClock.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="AlarmClock.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="AlarmClock.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="AlarmClock" Source="AlarmClock\AlarmClock.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>
