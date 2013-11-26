@@ -83,7 +83,7 @@ namespace AlarmClock
         {
             dlg = new OpenFileDialog();
             dlg.DefaultExt = ".exe";
-            dlg.Filter = "MP3 File|*.mp3";
+            dlg.Filter = "MP3 File|*.mp3|WMA File|*.wma";
             dlg.FilterIndex = 0;
             dlg.Multiselect = false;
             dlg.InitialDirectory = Directory.GetCurrentDirectory();
@@ -125,9 +125,9 @@ namespace AlarmClock
             if (AlarmActive == false)
             {
 
-                if (!textBox1.Text.ToLower().EndsWith(".mp3"))
+                if (!textBox1.Text.ToLower().EndsWith(".mp3") & !textBox1.Text.ToLower().EndsWith(".wma"))
                 {
-                    MessageBox.Show("You must enter the path to a valid mp3 file");
+                    MessageBox.Show("You must enter the path to a valid mp3 or wma file");
                     return;
                 }
             
