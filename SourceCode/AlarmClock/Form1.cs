@@ -122,25 +122,36 @@ namespace AlarmClock
 
         public void btnSetAlarm_Click(object sender, EventArgs e)
         {
-            if (!textBox1.Text.ToLower().EndsWith(".mp3"))
+            if (AlarmActive == false)
             {
-                MessageBox.Show("You must enter the path to a valid mp3 file");
-                return;
+
+                if (!textBox1.Text.ToLower().EndsWith(".mp3"))
+                {
+                    MessageBox.Show("You must enter the path to a valid mp3 file");
+                    return;
+                }
+            
+                AlarmActive = true;
+                snd.open(textBox1.Text);
+                AlarmTime = cboHours.SelectedItem + ":" + cboMinutes.SelectedItem + " " + cboAmPm.SelectedItem;
+                this.Text = "Alarm Clock - Set: " + AlarmTime;
+                //btnSetAlarm.Enabled = false;
+                btnSetAlarm.Text = "Disable";
+            
+                Properties.Settings.Default.MediaFile = textBox1.Text;
+                Properties.Settings.Default.Hour = cboHours.SelectedIndex;
+                Properties.Settings.Default.Minute = cboMinutes.SelectedIndex;
+                Properties.Settings.Default.AMPM = cboAmPm.SelectedIndex;
+                Properties.Settings.Default.SnoozeTime = cboSnoozeTime.SelectedIndex;
+                Properties.Settings.Default.Save();
             }
-            
-            AlarmActive = true;
-            snd.open(textBox1.Text);
-            AlarmTime = cboHours.SelectedItem + ":" + cboMinutes.SelectedItem + " " + cboAmPm.SelectedItem;
-            this.Text = "Alarm Clock - Set: " + AlarmTime;
-            btnSetAlarm.Enabled = false;
-            
-            Properties.Settings.Default.MediaFile = textBox1.Text;
-            Properties.Settings.Default.Hour = cboHours.SelectedIndex;
-            Properties.Settings.Default.Minute = cboMinutes.SelectedIndex;
-            Properties.Settings.Default.AMPM = cboAmPm.SelectedIndex;
-            Properties.Settings.Default.SnoozeTime = cboSnoozeTime.SelectedIndex;
-            Properties.Settings.Default.Save(); 
- 
+            else
+            {
+                AlarmActive = false;
+                this.Text = "Alarm";
+                btnSetAlarm.Text = "Activate";
+            }
+
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)

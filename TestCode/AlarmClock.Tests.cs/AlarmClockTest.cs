@@ -198,6 +198,55 @@ namespace AlarmClock.Tests
             window.Dispose();
             application.Close();
         }
+        [Test]         // Verify Activate/Disable button  
+        public void frmMain_ActivateDisableButtonTest()
+        {
+            // set an alarm to 7:00PM and slect an MP3 File
+            Application application = Application.Launch("AlarmClock.exe");
+            Window window = application.GetWindow("Alarm", InitializeOption.NoCache);
+
+            window.WaitWhileBusy();
+            // Set the Hour   
+            var Hour = window.Get<ComboBox>(SearchCriteria.ByAutomationId("cboHours"));
+            Hour.Click();
+            window.WaitWhileBusy();
+            Hour.Select("7");
+
+            // Set the Minutes
+            var Minutes = window.Get<ComboBox>(SearchCriteria.ByAutomationId("cboMinutes"));
+            window.WaitWhileBusy();
+            Minutes.Click();
+            window.WaitWhileBusy();
+            Minutes.Select("00");
+
+            // Finds the AmPm comboBox  
+            var AmPm = window.Get<ComboBox>(SearchCriteria.ByAutomationId("cboAmPm"));
+            // select AM
+            AmPm.Click();
+            window.WaitWhileBusy();
+            AmPm.Select("PM");
+
+            // Finds the Alarm File comboBox  
+            var File = window.Get<TextBox>(SearchCriteria.ByAutomationId("textBox1"));
+            File.Text = @"G:\Mercer Masters\Fall 2013\SSE 659\Project3\MP3s\alarm01.mp3";
+
+            // Finds the Activate Button  
+            var Activate = window.Get<Button>(SearchCriteria.ByAutomationId("btnSetAlarm"));
+            Activate.Click();
+
+            // verify the Select button is not Disabled
+            Assert.True(Activate.Enabled);
+            
+            // check text field
+            Assert.AreEqual(Activate.Text,"Disable");
+
+            // verify the label change back to "Activate" when disable is clicked
+            Activate.Click();
+            Assert.AreEqual(Activate.Text, "Activate");
+
+            window.Dispose();
+            application.Close();
+        }
 
         [Test]         // Verify Snooze checkbox
         public void frmMain_EnableSnoozeCheckbox()
