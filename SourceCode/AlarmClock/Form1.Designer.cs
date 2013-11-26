@@ -49,6 +49,8 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.ctxExit = new System.Windows.Forms.ToolStripMenuItem();
             this.txtBoxNote = new System.Windows.Forms.TextBox();
+            this.btnBackground = new System.Windows.Forms.Button();
+            this.btnForeground = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -340,12 +342,34 @@
             this.txtBoxNote.TabIndex = 19;
             this.txtBoxNote.Text = "Note";
             // 
+            // btnBackground
+            // 
+            this.btnBackground.Location = new System.Drawing.Point(457, 128);
+            this.btnBackground.Name = "btnBackground";
+            this.btnBackground.Size = new System.Drawing.Size(32, 23);
+            this.btnBackground.TabIndex = 20;
+            this.btnBackground.Text = "BG";
+            this.btnBackground.UseVisualStyleBackColor = true;
+            this.btnBackground.Click += new System.EventHandler(this.btnBackground_Click);
+            // 
+            // btnForeground
+            // 
+            this.btnForeground.Location = new System.Drawing.Point(419, 128);
+            this.btnForeground.Name = "btnForeground";
+            this.btnForeground.Size = new System.Drawing.Size(32, 23);
+            this.btnForeground.TabIndex = 21;
+            this.btnForeground.Text = "FG";
+            this.btnForeground.UseVisualStyleBackColor = true;
+            this.btnForeground.Click += new System.EventHandler(this.btnForeground_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(492, 263);
+            this.Controls.Add(this.btnForeground);
+            this.Controls.Add(this.btnBackground);
             this.Controls.Add(this.txtBoxNote);
             this.Controls.Add(this.chkMin2Tray);
             this.Controls.Add(this.chkActivateStart);
@@ -399,6 +423,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ctxExit;
         private System.Windows.Forms.TextBox txtBoxNote;
+        public System.Windows.Forms.Button btnBackground;
+        public System.Windows.Forms.Button btnForeground;
 
 
     }

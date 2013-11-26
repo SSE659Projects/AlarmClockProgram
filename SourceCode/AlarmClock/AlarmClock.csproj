@@ -159,6 +159,12 @@
   <ItemGroup>
     <None Include="Resources\Alarm.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\alarm01.mp3" />
+    <Content Include="Resources\alarm02.mp3" />
+    <Content Include="Resources\alarm03.mp3" />
+    <Content Include="Resources\alarm04.mp3" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -265,6 +265,37 @@ namespace AlarmClock
         {
             this.WindowState = FormWindowState.Normal;
             icon.Visible = false;
+        }
+
+
+        private void btnForeground_Click(object sender, EventArgs e)
+        {
+            ColorDialog MyDialog = new ColorDialog();
+            // Keeps the user from selecting a custom color.
+            MyDialog.AllowFullOpen = true;
+            // Allows the user to get help. (The default is false.)
+            MyDialog.ShowHelp = false;
+            // Sets the initial color select to the current text color.
+            MyDialog.Color = lblTime.ForeColor;
+
+            // Update the text box color if the user clicks OK  
+            if (MyDialog.ShowDialog() == DialogResult.OK)
+                lblTime.ForeColor = MyDialog.Color;
+        }
+
+        private void btnBackground_Click(object sender, EventArgs e)
+        {
+            ColorDialog MyDialog = new ColorDialog();
+            // Keeps the user from selecting a custom color.
+            MyDialog.AllowFullOpen = true;
+            // Allows the user to get help. (The default is false.)
+            MyDialog.ShowHelp = false;
+            // Sets the initial color select to the current text color.
+            MyDialog.Color = lblTime.BackColor;
+
+            // Update the text box color if the user clicks OK  
+            if (MyDialog.ShowDialog() == DialogResult.OK)
+                lblTime.BackColor = MyDialog.Color;
         }      
     }
 }

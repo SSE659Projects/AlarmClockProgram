@@ -340,5 +340,36 @@ namespace AlarmClock.Tests
             window.Dispose();
             application.Close();
         }
+        [Test]         // Verify FG button
+        public void frmMain_FGbutton()
+        {
+            Application application = Application.Launch("AlarmClock.exe");
+            Window window = application.GetWindow("Alarm", InitializeOption.NoCache);
+
+            window.WaitWhileBusy();
+            // find the Minimize To Tray checkbox
+            var btnFG = window.Get<Button>("btnForeground");
+            
+            Assert.AreEqual(btnFG.Text,"FG");
+
+            window.Dispose();
+            application.Close();
+        }
+        [Test]         // Verify BG button
+        public void frmMain_BGbutton()
+        {
+            Application application = Application.Launch("AlarmClock.exe");
+            Window window = application.GetWindow("Alarm", InitializeOption.NoCache);
+
+            window.WaitWhileBusy();
+            // find the Minimize To Tray checkbox
+            var btnFG = window.Get<Button>("btnBackground");
+
+            Assert.AreEqual(btnFG.Text, "BG");
+
+            window.Dispose();
+            application.Close();
+        }
+
     }
 }
