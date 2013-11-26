@@ -103,6 +103,7 @@ namespace AlarmClock
             cboAmPm.SelectedIndex = Properties.Settings.Default.AMPM;
             chkLoop.Checked = Properties.Settings.Default.Loop;
             textBox1.Text = Properties.Settings.Default.MediaFile;
+            txtBoxNote.Text = Properties.Settings.Default.Note;
             cboSnoozeTime.SelectedIndex = Properties.Settings.Default.SnoozeTime;
             chkSnooze.Checked = Properties.Settings.Default.CanSnooze;
             chkMin2Tray.Checked = Properties.Settings.Default.Min2Tray;
@@ -139,6 +140,7 @@ namespace AlarmClock
                 btnSetAlarm.Text = "Disable";
             
                 Properties.Settings.Default.MediaFile = textBox1.Text;
+                Properties.Settings.Default.Note = txtBoxNote.Text;
                 Properties.Settings.Default.Hour = cboHours.SelectedIndex;
                 Properties.Settings.Default.Minute = cboMinutes.SelectedIndex;
                 Properties.Settings.Default.AMPM = cboAmPm.SelectedIndex;

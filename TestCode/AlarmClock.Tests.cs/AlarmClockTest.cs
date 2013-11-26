@@ -61,6 +61,21 @@ namespace AlarmClock.Tests
             window.Dispose();
             application.Close();
         }
+        
+        [Test]         // Verify txtBoxNote is "Note"         
+        public void frmMain_txtBoxNote_Is_Note()
+        {
+            Application application = Application.Launch("AlarmClock.exe");
+            Window window = application.GetWindow("Alarm", InitializeOption.NoCache);
+                       
+            // test text box
+            var Note = window.Get<TextBox>(SearchCriteria.ByAutomationId("txtBoxNote"));
+
+            Assert.AreEqual(Note.Text, "Note");
+
+            window.Dispose();
+            application.Close();
+        }
        
         [Test]         // Verify Hour comboBox can be set from 1 to 12 
         public void frmMain_cboHourTest()         

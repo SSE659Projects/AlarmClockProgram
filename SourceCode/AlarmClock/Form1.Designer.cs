@@ -48,6 +48,7 @@
             this.ctxShowWindow = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.ctxExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtBoxNote = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +63,6 @@
             this.lblTime.Size = new System.Drawing.Size(486, 116);
             this.lblTime.TabIndex = 0;
             this.lblTime.Text = "00:00";
-           
             // 
             // cboAmPm
             // 
@@ -332,12 +332,21 @@
             this.ctxExit.Text = "Exit";
             this.ctxExit.Click += new System.EventHandler(this.ctxExit_Click);
             // 
+            // txtBoxNote
+            // 
+            this.txtBoxNote.Location = new System.Drawing.Point(63, 132);
+            this.txtBoxNote.Name = "txtBoxNote";
+            this.txtBoxNote.Size = new System.Drawing.Size(183, 20);
+            this.txtBoxNote.TabIndex = 19;
+            this.txtBoxNote.Text = "Note";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(492, 263);
+            this.Controls.Add(this.txtBoxNote);
             this.Controls.Add(this.chkMin2Tray);
             this.Controls.Add(this.chkActivateStart);
             this.Controls.Add(this.label1);
@@ -389,6 +398,7 @@
         private System.Windows.Forms.ToolStripMenuItem ctxShowWindow;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ctxExit;
+        private System.Windows.Forms.TextBox txtBoxNote;
 
 
     }
