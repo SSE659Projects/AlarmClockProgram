@@ -32,6 +32,21 @@ namespace AlarmClock.Tests
             application.Close();             
         }
 
+        [Test]       // Verify Alarm File text box (textBox1) is not blank         
+        public void frmMain_AlarmFile_Default()
+        {
+            Application application = Application.Launch("AlarmClock.exe");
+            Window window1 = application.GetWindow("Alarm", InitializeOption.NoCache);
+
+            // Finds the Alarm File comboBox  
+            var File = window1.Get<TextBox>(SearchCriteria.ByAutomationId("textBox1"));
+
+            Assert.AreNotEqual(File.Text, "");
+
+            window1.Dispose();
+            application.Close();
+        }
+
         [Test]         // Verify lblTime = system time         
         public void frmMain_lblTime_EQ_SystemTime()
         {

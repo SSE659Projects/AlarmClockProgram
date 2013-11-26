@@ -108,6 +108,14 @@ namespace AlarmClock
             chkMin2Tray.Checked = Properties.Settings.Default.Min2Tray;
             chkActivateStart.Checked = Properties.Settings.Default.ActivateAtStartup;
 
+            if (textBox1.Text == "")
+            {
+                string absPathContainingHrefs = Directory.GetCurrentDirectory();
+                string fullPath = Path.Combine(absPathContainingHrefs, @"..\..\Resources\alarm01.mp3");
+                fullPath = Path.GetFullPath(fullPath);  // Will turn the above into a proper abs path
+                textBox1.Text = fullPath;
+            }
+
             if (chkActivateStart.Checked)
                 btnSetAlarm.PerformClick();
         }
