@@ -13,6 +13,7 @@ using CheckBox = TestStack.White.UIItems.CheckBox;
 using RadioButton = TestStack.White.UIItems.RadioButton;  
 using TextBox = TestStack.White.UIItems.TextBox;
 using ComboBox = TestStack.White.UIItems.ListBoxItems.ComboBox;
+using ListBox = TestStack.White.UIItems.ListBoxItems.ListBox;
 
 namespace AlarmClock.Tests 
 {
@@ -370,6 +371,231 @@ namespace AlarmClock.Tests
             window.Dispose();
             application.Close();
         }
+        [Test]   // Verify multiple alarm listBoxes (AlarmTime, MediaFile, Note)  
+        public void frmMain_MultipleAlarmListBoxTest()
+        {
+            // set an alarm to 7:00PM and slect an MP3 File
+            Application application = Application.Launch("AlarmClock.exe");
+            Window window = application.GetWindow("Alarm", InitializeOption.NoCache);
 
+            window.WaitWhileBusy();
+            // Set the Hour   
+            var Hour = window.Get<ComboBox>(SearchCriteria.ByAutomationId("cboHours"));
+            Hour.Select("7");
+
+            // Set the Minutes
+            var Minutes = window.Get<ComboBox>(SearchCriteria.ByAutomationId("cboMinutes"));
+            Minutes.Select("00");
+
+            // Finds the AmPm comboBox  
+            var AmPm = window.Get<ComboBox>(SearchCriteria.ByAutomationId("cboAmPm"));
+            // select AM
+            AmPm.Select("PM");
+
+            // Finds the Alarm File comboBox  
+            var File = window.Get<TextBox>(SearchCriteria.ByAutomationId("textBox1"));
+            File.Text = @"G:\Mercer Masters\Fall 2013\SSE 659\Project3\MP3s\alarm01.mp3";
+
+            // Finds the Alarm File comboBox  
+            var txtNote = window.Get<TextBox>(SearchCriteria.ByAutomationId("txtBoxNote"));
+            txtNote.Text = "This is the note for Alarm 1";
+
+            // Finds the Activate Button  
+            var Activate = window.Get<Button>(SearchCriteria.ByAutomationId("btnSetAlarm"));
+            Activate.Click();
+
+            System.Threading.Thread.Sleep(1000);   //wait 1 second
+            // verify AlarmTime is added to listbox  
+            var lstAlarmTime = window.Get<ListBox>(SearchCriteria.ByAutomationId("lstBoxAlarmTime"));     
+            string AlarmTime = Hour.SelectedItem.Text + ":" + Minutes.SelectedItem.Text + " " + AmPm.SelectedItem.Text;
+            lstAlarmTime.Select(0);
+            Assert.AreEqual(lstAlarmTime.SelectedItemText,AlarmTime);
+            
+            // verify Note is added to listbox  
+            var lstNote = window.Get<ListBox>(SearchCriteria.ByAutomationId("lstBoxNote"));
+            lstNote.Select(0);
+            // test Note text box
+            Assert.AreEqual(lstNote.SelectedItemText,txtNote.Text);
+
+            // verify MediaFile is added to listbox  
+            var lstMediaFile = window.Get<ListBox>(SearchCriteria.ByAutomationId("lstBoxMediaFile"));
+            // get MediaFile text box
+            var txtMediaFile = window.Get<TextBox>(SearchCriteria.ByAutomationId("textBox1"));
+            lstMediaFile.Select(0);
+            Assert.AreEqual(lstMediaFile.SelectedItemText, File.Text);
+
+ // Alarm 2 set alarm to 7:05PM and slect an MP3 File
+           
+            // Set the Hour  
+            Hour.Select("7");
+
+            // Set the Minutes
+            Minutes.Select("05");
+          
+            // select AM
+            AmPm.Select("PM");
+
+            // set media File
+            File.Text = @"G:\Mercer Masters\Fall 2013\SSE 659\Project3\MP3s\alarm02.mp3";
+            
+            // set Note
+            txtNote.Text = "This is the note for Alarm 2";
+            
+            //Activate the alarm
+            Activate.Click();
+
+            System.Threading.Thread.Sleep(1000);   //wait 1 second
+            AlarmTime = Hour.SelectedItemText + ":" + Minutes.SelectedItemText + " " + AmPm.SelectedItemText;
+            lstAlarmTime.Select(1);
+            // verify AlarmTime is added to listbox  
+            Assert.AreEqual(lstAlarmTime.SelectedItemText, AlarmTime);
+
+            // verify Note is added to listbox  
+            lstNote.Select(1);
+            Assert.AreEqual(lstNote.SelectedItemText, txtNote.Text);
+
+            // verify MediaFile is added to listbox
+            lstMediaFile.Select(1);
+            Assert.AreEqual(lstMediaFile.SelectedItemText, File.Text);
+
+  // Alarm 3 Set an alarm to 7:10PM and slect an MP3 File
+
+            // Set the Hour  
+            Hour.Select("7");
+
+            // Set the Minutes
+            Minutes.Select("10");
+
+            // select AM
+            AmPm.Select("PM");
+
+            // set media File
+            File.Text = @"G:\Mercer Masters\Fall 2013\SSE 659\Project3\MP3s\alarm03.mp3";
+
+            // set Note
+            txtNote.Text = "This is the note for Alarm 3";
+
+            //Activate the alarm
+            Activate.Click();
+
+            System.Threading.Thread.Sleep(1000);   //wait 1 second
+            AlarmTime = Hour.SelectedItemText + ":" + Minutes.SelectedItemText + " " + AmPm.SelectedItemText;
+            lstAlarmTime.Select(2);
+            // verify AlarmTime is added to listbox  
+            Assert.AreEqual(lstAlarmTime.SelectedItemText, AlarmTime);
+
+            // verify Note is added to listbox  
+            lstNote.Select(2);
+            Assert.AreEqual(lstNote.SelectedItemText, txtNote.Text);
+
+            // verify MediaFile is added to listbox
+            lstMediaFile.Select(2);
+            Assert.AreEqual(lstMediaFile.SelectedItemText, File.Text);
+
+ // Alarm 4 set alarm to 7:15PM and slect an MP3 File
+
+            // Set the Hour  
+            Hour.Select("7");
+
+            // Set the Minutes
+            Minutes.Select("15");
+
+            // select AM
+            AmPm.Select("PM");
+
+            // set media File
+            File.Text = @"G:\Mercer Masters\Fall 2013\SSE 659\Project3\MP3s\alarm04.mp3";
+
+            // set Note
+            txtNote.Text = "This is the note for Alarm 4";
+
+            //Activate the alarm
+            Activate.Click();
+
+            System.Threading.Thread.Sleep(1000);   //wait 1 second
+            AlarmTime = Hour.SelectedItemText + ":" + Minutes.SelectedItemText + " " + AmPm.SelectedItemText;
+            lstAlarmTime.Select(3);
+            // verify AlarmTime is added to listbox  
+            Assert.AreEqual(lstAlarmTime.SelectedItemText, AlarmTime);
+
+            // verify Note is added to listbox  
+            lstNote.Select(3);
+            Assert.AreEqual(lstNote.SelectedItemText, txtNote.Text);
+
+            // verify MediaFile is added to listbox
+            lstMediaFile.Select(3);
+            Assert.AreEqual(lstMediaFile.SelectedItemText, File.Text);
+
+  // Alarm 5 Set an alarm to 7:20PM and slect an MP3 File
+
+            // Set the Hour  
+            Hour.Select("7");
+
+            // Set the Minutes
+            Minutes.Select("20");
+
+            // select AM
+            AmPm.Select("PM");
+
+            // set media File
+            File.Text = @"G:\Mercer Masters\Fall 2013\SSE 659\Project3\MP3s\alarm01.mp3";
+
+            // set Note
+            txtNote.Text = "This is the note for Alarm 5";
+
+            //Activate the alarm
+            Activate.Click();
+
+            System.Threading.Thread.Sleep(1000);   //wait 1 second
+            AlarmTime = Hour.SelectedItemText + ":" + Minutes.SelectedItemText + " " + AmPm.SelectedItemText;
+            lstAlarmTime.Select(4);
+            // verify AlarmTime is added to listbox  
+            Assert.AreEqual(lstAlarmTime.SelectedItemText, AlarmTime);
+
+            // verify Note is added to listbox  
+            lstNote.Select(4);
+            Assert.AreEqual(lstNote.SelectedItemText, txtNote.Text);
+
+            // verify MediaFile is added to listbox
+            lstMediaFile.Select(4);
+            Assert.AreEqual(lstMediaFile.SelectedItemText, File.Text);
+
+   // Alarm 6 Set an alarm to 7:25PM and slect an MP3 File
+
+            // Set the Hour  
+            Hour.Select("7");
+
+            // Set the Minutes
+            Minutes.Select("25");
+
+            // select AM
+            AmPm.Select("PM");
+
+            // set media File
+            File.Text = @"G:\Mercer Masters\Fall 2013\SSE 659\Project3\MP3s\alarm02.mp3";
+
+            // set Note
+            txtNote.Text = "This is the note for Alarm 6";
+
+            //Activate the alarm
+            Activate.Click();
+
+            System.Threading.Thread.Sleep(1000);   //wait 1 second
+            AlarmTime = Hour.SelectedItemText + ":" + Minutes.SelectedItemText + " " + AmPm.SelectedItemText;
+            lstAlarmTime.Select(5);
+            // verify AlarmTime is added to listbox  
+            Assert.AreEqual(lstAlarmTime.SelectedItemText, AlarmTime);
+
+            // verify Note is added to listbox  
+            lstNote.Select(5);
+            Assert.AreEqual(lstNote.SelectedItemText, txtNote.Text);
+
+            // verify MediaFile is added to listbox
+            lstMediaFile.Select(5);
+            Assert.AreEqual(lstMediaFile.SelectedItemText, File.Text);
+
+            window.Dispose();
+            application.Close();
+        }
     }
 }

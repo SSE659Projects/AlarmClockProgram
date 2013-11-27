@@ -45,17 +45,25 @@ namespace AlarmClock
             
             if (!isSnoozing)
             {
-                if (lblTime.Text == AlarmTime && AlarmActive)
-                {
-                    snd.play();
-                    btnSetAlarm.Enabled = true;
-                    Playing = true; 
-                   
-                    if (canSnooze)
-                    {
-                        doSnooze();
-                    }
-                }                
+                 if (lstBoxAlarmTime.Items.Contains(lblTime.Text) && AlarmActive)
+                 {
+                     snd.open(textBox1.Text);
+                        
+                     snd.play();
+                     btnSetAlarm.Enabled = true;
+                     Playing = true;
+                     
+                     if (canSnooze)
+                     {
+                         doSnooze();
+                     }
+                 }
+                 else
+                 {
+                     if (snd.isOpen)
+                         snd.close();
+                 }
+                
             }
             else
             {
@@ -123,37 +131,28 @@ namespace AlarmClock
 
         public void btnSetAlarm_Click(object sender, EventArgs e)
         {
-            if (AlarmActive == false)
+            if (!textBox1.Text.ToLower().EndsWith(".mp3") & !textBox1.Text.ToLower().EndsWith(".wma"))
             {
-
-                if (!textBox1.Text.ToLower().EndsWith(".mp3") & !textBox1.Text.ToLower().EndsWith(".wma"))
-                {
-                    MessageBox.Show("You must enter the path to a valid mp3 or wma file");
-                    return;
-                }
-            
-                AlarmActive = true;
-                snd.open(textBox1.Text);
-                AlarmTime = cboHours.SelectedItem + ":" + cboMinutes.SelectedItem + " " + cboAmPm.SelectedItem;
-                this.Text = "Alarm Clock - Set: " + AlarmTime;
-                //btnSetAlarm.Enabled = false;
-                btnSetAlarm.Text = "Disable";
-            
-                Properties.Settings.Default.MediaFile = textBox1.Text;
-                Properties.Settings.Default.Note = txtBoxNote.Text;
-                Properties.Settings.Default.Hour = cboHours.SelectedIndex;
-                Properties.Settings.Default.Minute = cboMinutes.SelectedIndex;
-                Properties.Settings.Default.AMPM = cboAmPm.SelectedIndex;
-                Properties.Settings.Default.SnoozeTime = cboSnoozeTime.SelectedIndex;
-                Properties.Settings.Default.Save();
+               MessageBox.Show("You must enter the path to a valid mp3 or wma file");
+               return;
             }
-            else
-            {
-                AlarmActive = false;
-                this.Text = "Alarm";
-                btnSetAlarm.Text = "Activate";
-            }
+            
+            AlarmActive = true;
+            AlarmTime = cboHours.SelectedItem + ":" + cboMinutes.SelectedItem + " " + cboAmPm.SelectedItem;
+            this.Text = "Alarm Clock - Set: " + AlarmTime;
+             
+            Properties.Settings.Default.MediaFile = textBox1.Text;
+            Properties.Settings.Default.Note = txtBoxNote.Text;
+            Properties.Settings.Default.Hour = cboHours.SelectedIndex;
+            Properties.Settings.Default.Minute = cboMinutes.SelectedIndex;
+            Properties.Settings.Default.AMPM = cboAmPm.SelectedIndex;
+            Properties.Settings.Default.SnoozeTime = cboSnoozeTime.SelectedIndex;
+            Properties.Settings.Default.Save();
 
+            // add the alarm items to the Active Alarm list boxes
+            lstBoxAlarmTime.Items.Add(AlarmTime);
+            lstBoxNote.Items.Add(txtBoxNote.Text);
+            lstBoxMediaFile.Items.Add(textBox1.Text);
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -296,6 +295,18 @@ namespace AlarmClock
             // Update the text box color if the user clicks OK  
             if (MyDialog.ShowDialog() == DialogResult.OK)
                 lblTime.BackColor = MyDialog.Color;
+        }
+
+        private void btnClearActiveAlarms_Click(object sender, EventArgs e)
+        {
+            // Clear Alarm list boxes
+            lstBoxAlarmTime.Items.Clear();
+            lstBoxNote.Items.Clear();
+            lstBoxMediaFile.Items.Clear();
+            
+            AlarmActive = false;
+            this.Text = "Alarm";
+            
         }      
     }
 }

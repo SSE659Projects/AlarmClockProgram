@@ -51,6 +51,11 @@
             this.txtBoxNote = new System.Windows.Forms.TextBox();
             this.btnBackground = new System.Windows.Forms.Button();
             this.btnForeground = new System.Windows.Forms.Button();
+            this.lstBoxAlarmTime = new System.Windows.Forms.ListBox();
+            this.lstBoxNote = new System.Windows.Forms.ListBox();
+            this.lstBoxMediaFile = new System.Windows.Forms.ListBox();
+            this.lblActiveAlarms = new System.Windows.Forms.Label();
+            this.btnClearActiveAlarms = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -362,12 +367,59 @@
             this.btnForeground.UseVisualStyleBackColor = true;
             this.btnForeground.Click += new System.EventHandler(this.btnForeground_Click);
             // 
+            // lstBoxAlarmTime
+            // 
+            this.lstBoxAlarmTime.FormattingEnabled = true;
+            this.lstBoxAlarmTime.Location = new System.Drawing.Point(24, 289);
+            this.lstBoxAlarmTime.Name = "lstBoxAlarmTime";
+            this.lstBoxAlarmTime.Size = new System.Drawing.Size(92, 95);
+            this.lstBoxAlarmTime.TabIndex = 22;
+            // 
+            // lstBoxNote
+            // 
+            this.lstBoxNote.FormattingEnabled = true;
+            this.lstBoxNote.Location = new System.Drawing.Point(114, 289);
+            this.lstBoxNote.Name = "lstBoxNote";
+            this.lstBoxNote.Size = new System.Drawing.Size(357, 95);
+            this.lstBoxNote.TabIndex = 23;
+            // 
+            // lstBoxMediaFile
+            // 
+            this.lstBoxMediaFile.FormattingEnabled = true;
+            this.lstBoxMediaFile.Location = new System.Drawing.Point(103, 289);
+            this.lstBoxMediaFile.Name = "lstBoxMediaFile";
+            this.lstBoxMediaFile.Size = new System.Drawing.Size(364, 95);
+            this.lstBoxMediaFile.TabIndex = 24;
+            // 
+            // lblActiveAlarms
+            // 
+            this.lblActiveAlarms.AutoSize = true;
+            this.lblActiveAlarms.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblActiveAlarms.Location = new System.Drawing.Point(21, 273);
+            this.lblActiveAlarms.Name = "lblActiveAlarms";
+            this.lblActiveAlarms.Size = new System.Drawing.Size(74, 13);
+            this.lblActiveAlarms.TabIndex = 25;
+            this.lblActiveAlarms.Text = "Active Alarms:";
+            // 
+            // btnClearActiveAlarms
+            // 
+            this.btnClearActiveAlarms.Location = new System.Drawing.Point(110, 268);
+            this.btnClearActiveAlarms.Name = "btnClearActiveAlarms";
+            this.btnClearActiveAlarms.Size = new System.Drawing.Size(136, 23);
+            this.btnClearActiveAlarms.TabIndex = 26;
+            this.btnClearActiveAlarms.Text = "Clear Active Alarms";
+            this.btnClearActiveAlarms.UseVisualStyleBackColor = true;
+            this.btnClearActiveAlarms.Click += new System.EventHandler(this.btnClearActiveAlarms_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(492, 263);
+            this.ClientSize = new System.Drawing.Size(492, 400);
+            this.Controls.Add(this.btnClearActiveAlarms);
+            this.Controls.Add(this.lblActiveAlarms);
+            this.Controls.Add(this.lstBoxAlarmTime);
             this.Controls.Add(this.btnForeground);
             this.Controls.Add(this.btnBackground);
             this.Controls.Add(this.txtBoxNote);
@@ -386,6 +438,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cboMinutes);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lstBoxNote);
+            this.Controls.Add(this.lstBoxMediaFile);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmMain";
@@ -425,6 +479,11 @@
         private System.Windows.Forms.TextBox txtBoxNote;
         public System.Windows.Forms.Button btnBackground;
         public System.Windows.Forms.Button btnForeground;
+        private System.Windows.Forms.ListBox lstBoxAlarmTime;
+        private System.Windows.Forms.ListBox lstBoxNote;
+        private System.Windows.Forms.ListBox lstBoxMediaFile;
+        private System.Windows.Forms.Label lblActiveAlarms;
+        public System.Windows.Forms.Button btnClearActiveAlarms;
 
 
     }
