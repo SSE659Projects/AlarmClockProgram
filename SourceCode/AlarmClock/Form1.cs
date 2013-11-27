@@ -47,6 +47,7 @@ namespace AlarmClock
             {
                  if (lstBoxAlarmTime.Items.Contains(lblTime.Text) && AlarmActive)
                  {
+                     
                      snd.open(textBox1.Text);
                         
                      snd.play();
@@ -139,7 +140,7 @@ namespace AlarmClock
             
             AlarmActive = true;
             AlarmTime = cboHours.SelectedItem + ":" + cboMinutes.SelectedItem + " " + cboAmPm.SelectedItem;
-            this.Text = "Alarm Clock - Set: " + AlarmTime;
+            //this.Text = "Alarm Clock - Set: " + AlarmTime;
              
             Properties.Settings.Default.MediaFile = textBox1.Text;
             Properties.Settings.Default.Note = txtBoxNote.Text;
