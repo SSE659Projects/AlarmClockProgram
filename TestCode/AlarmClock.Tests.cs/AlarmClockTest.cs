@@ -72,7 +72,8 @@ namespace AlarmClock.Tests
             // test text box
             var Note = window.Get<TextBox>(SearchCriteria.ByAutomationId("txtBoxNote"));
 
-            Assert.AreEqual(Note.Text, "Note");
+            // verty test is not blank now that the current value is saved as default
+            Assert.AreNotEqual(Note.Text, "");
 
             window.Dispose();
             application.Close();
@@ -86,16 +87,15 @@ namespace AlarmClock.Tests
 
             int intHr = 1;
             do{
-                window2.WaitWhileBusy();
+                
                 // convert int to string
                 string strHr = intHr.ToString();
 
                 //inputs the Hour into the Hour dropdown  
                 var Hour = window2.Get<ComboBox>(SearchCriteria.ByAutomationId("cboHours"));  
-                Hour.Click();  
-                window2.WaitWhileBusy();
+                
                 Hour.Select(strHr);
-                window2.WaitWhileBusy();
+               
                 Assert.AreEqual(Hour.SelectedItemText, strHr);
 
                 intHr++;
@@ -113,7 +113,7 @@ namespace AlarmClock.Tests
 
             int intMin = 0;
             do{
-                window3.WaitWhileBusy();
+                
                 // convert int to string
                 string strMin = intMin.ToString();
                 // corection for single digit
@@ -129,11 +129,9 @@ namespace AlarmClock.Tests
                 if (strMin == "9") strMin = "09";
                 //inputs the Minutes into the Minutes dropdown  
                 var Minutes = window3.Get<ComboBox>(SearchCriteria.ByAutomationId("cboMinutes"));
-                window3.WaitWhileBusy(); 
-                Minutes.Click();  
-                window3.WaitWhileBusy();  
+                
                 Minutes.Select(strMin);
-                window3.WaitWhileBusy();
+                
                 Assert.AreEqual(Minutes.SelectedItemText, strMin);
             
                 intMin++;
@@ -154,18 +152,15 @@ namespace AlarmClock.Tests
             // Finds the AmPm comboBox  
             var AmPm = window4.Get<ComboBox>(SearchCriteria.ByAutomationId("cboAmPm"));
             // select AM
-            AmPm.Click();
-            window4.WaitWhileBusy();
+           
             AmPm.Select("AM");
-            window4.WaitWhileBusy();
-
+           
             Assert.AreEqual(AmPm.SelectedItemText, "AM");
             
             // select PM
-            AmPm.Click();
-            window4.WaitWhileBusy();
+           
             AmPm.Select("PM");
-            window4.WaitWhileBusy();
+            
             Assert.AreEqual(AmPm.SelectedItemText, "PM");
 
             window4.Dispose();
@@ -179,25 +174,20 @@ namespace AlarmClock.Tests
             Application application = Application.Launch("AlarmClock.exe");
             Window window = application.GetWindow("Alarm", InitializeOption.NoCache);
 
-            window.WaitWhileBusy();
             // Set the Hour   
             var Hour = window.Get<ComboBox>(SearchCriteria.ByAutomationId("cboHours"));
-            Hour.Click();
-            window.WaitWhileBusy();
+            
             Hour.Select("7");
 
             // Set the Minutes
             var Minutes = window.Get<ComboBox>(SearchCriteria.ByAutomationId("cboMinutes"));
-            window.WaitWhileBusy();
-            Minutes.Click();
-            window.WaitWhileBusy();
+            
             Minutes.Select("00");
 
             // Finds the AmPm comboBox  
             var AmPm = window.Get<ComboBox>(SearchCriteria.ByAutomationId("cboAmPm"));
             // select AM
-            AmPm.Click();
-            window.WaitWhileBusy();
+            
             AmPm.Select("PM");
 
             // Finds the Alarm File comboBox  
@@ -209,11 +199,13 @@ namespace AlarmClock.Tests
             Activate.Click();
 
             // verify the Select button is not Disabled
-            Assert.False(Activate.Enabled);
+            Assert.True(Activate.Enabled);
 
             window.Dispose();
             application.Close();
         }
+        // This test is no longer requried because the Active alarms are now disabled by the Clear Active Alarm button
+        /*
         [Test]         // Verify Activate/Disable button  
         public void frmMain_ActivateDisableButtonTest()
         {
@@ -263,6 +255,7 @@ namespace AlarmClock.Tests
             window.Dispose();
             application.Close();
         }
+         */
 
         [Test]         // Verify Snooze checkbox
         public void frmMain_EnableSnoozeCheckbox()
